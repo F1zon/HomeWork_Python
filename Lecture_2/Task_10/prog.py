@@ -8,3 +8,19 @@
 # 5 -> 1 0 1 1 0
 # 2
 
+n = int(input("Введите кол-во монет: "))
+x = 0
+y = 0
+
+for i in range(n):
+    s = int(input(":>> "))
+
+    if s == 1:
+        x += 1
+    elif s == 0:
+        y += 1
+
+if x < y:
+    print(x)
+elif y < x:
+    print(y)
