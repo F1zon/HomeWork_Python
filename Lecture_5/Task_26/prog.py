@@ -1,0 +1,17 @@
+# Задача 26: Напишите программу, которая на вход принимает два числа A и B, и возводит число А в целую степень B с помощью рекурсии.
+# A = 3; B = 5 -> 243 (3⁵)
+# A = 2; B = 3 -> 8
+
+def Con(num, dis, copy):
+    if dis > 1:
+        num *= copy
+        dis -= 1
+        return Con(num, dis, copy)
+    else:
+        return num
+
+num = int(input("Введите число: "))
+dis = int(input("Введите степень: "))
+copy = num
+
+print("Ваше число: {}".format(Con(num, dis, copy)))
