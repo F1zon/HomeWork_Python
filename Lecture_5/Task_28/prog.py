@@ -5,13 +5,12 @@
 # # 2 2
 # # 4
 
-def sums(a, b):
+def sums(a, b,):
     if b != 0:
         a += 1
         b -= 1
         return sums(a, b)
-    else:
-        return a
+    return a
 
 a = int(input("Введите число: "))
 b = int(input("+ ==> "))

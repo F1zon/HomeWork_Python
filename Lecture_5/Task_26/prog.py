@@ -2,16 +2,12 @@
 # A = 3; B = 5 -> 243 (3⁵)
 # A = 2; B = 3 -> 8
 
-def Con(num, dis, copy):
+def con(num, dis):
     if dis > 1:
-        num *= copy
-        dis -= 1
-        return Con(num, dis, copy)
-    else:
-        return num
+        return con(num, dis - 1) * con(num, 1)
+    return num
 
 num = int(input("Введите число: "))
 dis = int(input("Введите степень: "))
-copy = num
 
-print("Ваше число: {}".format(Con(num, dis, copy)))
+print("Ваше число: {}".format(con(num, dis)))
