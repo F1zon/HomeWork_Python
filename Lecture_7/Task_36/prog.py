@@ -10,13 +10,19 @@
 # Пример: print_operation_table(lambda x, y(row and colums): x * y(operation))
 
 
+# def print_operation_table(operation, row = 6, colums = 6):
+#     str = []
+#     for i in range(1, colums + 1):
+#         for j in range(1, row + 1):
+#             str.append(operation(i, j))
+#         print(str)
+#         str = []
+
 def print_operation_table(operation, row = 6, colums = 6):
-    str = []
+    table = []
     for i in range(1, colums + 1):
-        for j in range(1, row + 1):
-            str.append(operation(i, j))
-        print(str)
-        str = []
+        table = [operation(i, j) for j in range(1, colums + 1)]
+        print(*table, sep='\t')
 
 
 print_operation_table(lambda x, y: x * y)
