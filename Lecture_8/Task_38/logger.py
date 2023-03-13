@@ -12,8 +12,10 @@ def print_date():
 
         with open(file_name, 'r', encoding="utf-8") as file:
             list_data = file.readlines()
+            count = 1
             for i in list_data:
-                print(i)
+                print(f"[{count}]: {i}")
+                count += 1
     else:
         print("Файл не существует!!")
 
@@ -52,5 +54,40 @@ def filter_data(filter_string):
                 print("Записей не найденно!")
 
 
-# def change_data():
+def change_data(): # Дополнить конкретные изменения
+    print_date();
+    with open(file_name, 'r', encoding="utf-8") as file:
+        print("Введите номер изменяемой строки: ");
+        num = int(input(":>> "))
+        old_list_data = file.readlines()
+    
+    with open(file_name, 'w', encoding="utf-8") as file:
+        print("Введите новые данные: ")
+        name = name_data()
+        surname = surname_data()
+        adress = adress_data()
+        phone = phone_data()
 
+        count = 1
+        for i in old_list_data:
+            if num == count:
+                file.write(f"{name}; {surname}; {phone}; {adress}\n")
+            else:
+                file.write(i)
+            count += 1
+
+def delete_data(): # Нер работает
+    print_date()
+    with open(file_name, 'r', encoding="utf-8") as file:
+        print("Введите номер удаляемой строки: ")
+        num = int(input(":>> "))
+        old_list_data = file.readlines()
+    
+    with open(file_name, 'w', encoding="utf-8") as file:
+        count = 1
+
+        for i in old_list_data:
+            if num == count:
+                file.write("")
+            else:
+                file.write(i)
