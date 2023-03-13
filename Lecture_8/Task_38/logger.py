@@ -57,9 +57,14 @@ def filter_data(filter_string):
 def change_data():
     print_date();
     with open(file_name, 'r', encoding="utf-8") as file:
-        print("Введите номер изменяемой строки: ");
-        num = int(input(":>> "))
         old_list_data = file.readlines()
+    
+    print("Введите номер изменяемой строки: ");
+    num = int(input(":>> "))
+
+    while num < 1 or num > len(old_list_data):
+        print("Введите имеющийся номер строки!!")
+        num = int(input(":>> "))
     
     print("Что хотите изменить?")
     print("""
